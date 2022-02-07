@@ -5,3 +5,15 @@ To help build your python skills you will do the following for your next HW -
 1) copy and past the last geometry from your Ar minimization into a csv file
 2) start a new jupyter notebook that reads in this xyz file
 3) using loops and the LJ potential that you plotted in HW#2 you will then calculate the sum of all of the pairwise energies in your xyz file - this should be close to the total energy that was at the end of your minimization in LAMMPS.
+
+In the reading and analyzing the CSV file you will probably want to use the Panda's open-source python package. You can learn some of the basics here: 
+
+https://www.activestate.com/resources/quick-reads/what-is-pandas-in-python-everything-you-need-to-know/
+https://www.youtube.com/watch?v=kFg3SV4GY1U
+
+In calculating the pair-wise energies you will probably want to use loops. We will talk about this more in class, but here are some of the basics:
+
+https://www.geeksforgeeks.org/loops-in-python/
+https://www.analyticsvidhya.com/blog/2021/09/loops-and-control-statements-an-in-depth-python-tutorial/
+https://www.programiz.com/python-programming/for-loop
+
