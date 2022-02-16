@@ -17,3 +17,10 @@ https://www.geeksforgeeks.org/loops-in-python/
 https://www.analyticsvidhya.com/blog/2021/09/loops-and-control-statements-an-in-depth-python-tutorial/
 https://www.programiz.com/python-programming/for-loop
 
+UPDATE:
+
+-make sure you are using the same units as LAMMPS
+-make sure you go over all pairs, but take into account the cutoff used for the LJ potential 
+***NEW*** now add a section of your code to account for periodic boundary interactions (this means shifting the x, y, or z coordinates by the box size and calculating the distances so that you can account for interactions through the boundary)
+***NEW*** calculate the % deviation of your calculated pair-wise energy relative to LAMMPS and report that in your notebook.
+
