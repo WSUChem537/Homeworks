@@ -22,5 +22,18 @@ UPDATE:
 -make sure you are using the same units as LAMMPS
 -make sure you go over all pairs, but take into account the cutoff used for the LJ potential 
 ***NEW*** now add a section of your code to account for periodic boundary interactions (this means shifting the x, y, or z coordinates by the box size and calculating the distances so that you can account for interactions through the boundary)
+  -here is a simple algorithm that only calculates the LJ pair energy for atoms through the PBC:
+    1) define your PBC box dimensions: PBCx, PBCy, PBCz
+    2) define your LJ cutoff distance: LJ_cut
+    3) outer loop over atoms i
+      A)identify if atom i is within the LJ_cut distance of the PBC (this means it will interact with atoms across the PBC)
+          if PBCx - atom(i,x) is less than LJ_cut or if PBCy - atom(i,y) is less than LJ_cut or if PBCz - atom(i,z) is less than LJ cut then
+          B)do an inner loop over atom j.
+          if atom(j,x) is less than the absolute value of (PBCx - atom(i,x) - LJ_cut) then atom(j,x)=atom(j,x+PBCx)  #this is the shifting of coordinates in x
+          if atom(j,y) is less than the absolute value of (PBCy - atom(i,y) - LJ_cut) then atom(j,y)=atom(j,y+PBCy)  #this is the shifting of coordinates in y
+          if atom(j,z) is less than the absolute value of (PBCz - atom(i,z) - LJ_cut) then atom(j,z)=atom(j,z+PBCz)  #this is the shifting of coordinates in z
+          now recalculate your distance using the shifted x,y,or z and then calculate the LJ potential and add to the prior LJ sum
+      end inner loop over atom j
+      end outer loop over atom i
 ***NEW*** calculate the % deviation of your calculated pair-wise energy relative to LAMMPS and report that in your notebook.
 
