@@ -1,0 +1,14 @@
+Hi All - 
+
+For HW #4 I wish for you to create your Jupyter Notebook that plots the progress of your equilibration in LAMMPS using protocols #1 and #2:
+
+Protocol #1: NVT/NPT/NVT/NPT until equilibrated - plots of the T, P, E, V (or density would be better) until your argon box is equilibrated. Decide on an equilibration criterion, for example, your E is equilibrated when its fluctuations are 10% of the average. For T, P, this will need to be a larger % variance allowed if your box size is very small (so it would probably be very hard to get to 20% variance in T and P if you have under 200 Ar atoms in your box). So, Plot the fluctuations, calculate the average in the variable of interest and determine the % deviation for your runs to demonstrate that the variables are equilibrating as you move between the NVT/NPT ensembles. Go between the NVT and NPT until, you feel your variables are equilibrated according to the % deviation from the average that you determine (and have justified). 
+
+Protocol #2: NVT at higher temperature (simulated annealing, if your Ar should be a liquid at 87K then the higher T should probably be 150K, equilibrate at this higher T) - then fixes to systematically cool down every 5 degrees in NVT until you reach the target T and then do NPT. Again make your plots as described above 
+
+
+Finally - comment on which protocol led to faster equilibration of your Ar box. 
+
+
+Thanks;
+A
